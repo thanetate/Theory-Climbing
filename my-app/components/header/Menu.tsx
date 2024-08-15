@@ -5,6 +5,7 @@ import useCartService from '@/lib/hooks/useCartStore'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 export default function Header() {
 	const router = useRouter()
@@ -14,7 +15,7 @@ export default function Header() {
 	}
 
 	const Menu = () => {
-		const { items } = useCartService()
+		const { items, init } = useCartService()
 		const [mounted, setMounted] = useState(false)
 		useEffect(() => {
 			setMounted(true)
@@ -22,11 +23,12 @@ export default function Header() {
 	}
 
 	// Remove session-related code
-	// const { data: session, status } = useSession()
+	const { data: session, status } = useSession()
 
 	const signOutHandler = () => {
 		// Implement your sign out logic here, if needed
-		console.log('Sign out clicked')
+		signOut({callbackUrl: '/signin'})
+		init()
 	}
 
 	return (
@@ -36,7 +38,7 @@ export default function Header() {
 				<ul>
 					<li>
 						{/* Remove session check and sign-in/sign-out logic */}
-						{/* <div>
+						 <div>
 							{session && session.user ? (
 								<>
 									<label tabIndex={0}>
@@ -72,7 +74,7 @@ export default function Header() {
 									Sign In
 								</button>
 							)}
-						</div> */}
+						</div> 
 						<button
 							className="profile-btn"
 							type="button"
@@ -122,3 +124,7 @@ export default function Header() {
 		</header>
 	)
 }
+function init() {
+	throw new Error('Function not implemented.')
+}
+
