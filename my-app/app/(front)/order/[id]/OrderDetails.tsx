@@ -200,7 +200,7 @@ export default function OrderDetails({
                       disabled={isDelivering}
                     >
                       {isDelivering && (
-                        <span className="loading loading-spinner"></span>
+                        <span className="spinner"></span>
                       )}
                       Mark as delivered
                     </button>
