@@ -2,8 +2,7 @@
 
 |                |                                                        |
 | -------------- | ------------------------------------------------------ |
-| Tech           | Nextjs 13+, Server Components & Actions, Route Handler |
-| UI             | Tailwind, DaisyUI, Chart.js                            |
+| Tech           | Nextjs 13+, Server Components & Actions, Route Handler |                           |
 | Database       | MongoDB, Mongoose                                      |
 | Payment        | PayPal, Stripe                                         |
 | Deployment     | Github, Vercel, MongoDB Atlas                          |
