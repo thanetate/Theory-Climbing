@@ -4,13 +4,17 @@ import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
-
+import { signIn, signOut} from "next-auth/react";
 type Inputs = {
   name: string
   email: string
   password: string
   confirmPassword: string
 }
+
+const signOutHandler = () => {
+  signOut({ callbackUrl: "/" });
+};
 
 const Form = () => {
   const { data: session, update } = useSession()
@@ -153,7 +157,7 @@ const Form = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn btn-primary w-full"
+              className="p-btn"
             >
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
@@ -161,6 +165,13 @@ const Form = () => {
               Update
             </button>
           </div>
+          <button
+                  className="p-btn"
+                  type="button"
+                  onClick={signOutHandler}
+                >
+                  Sign Out
+                </button>
         </form>
       </div>
     </div>
