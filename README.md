@@ -9,4 +9,6 @@
 | Authentication | Auth.js, Google Auth                                   |
 | Others         | Cloudinary, Zustand, SWR                               |
 
-#Goal
+# Goal
+
+I’m building a website with Next.js and TypeScript to create a platform for climbing-related clothing for myself and my friends. As a computer science student at the University of North Texas, this project is a fantastic opportunity for me to dive deeper into these technologies and apply what I’m learning in a real-world scenario.
