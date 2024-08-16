@@ -62,7 +62,7 @@ export default async function ProductDetails({
 					<div>
 						{/*Add to Cart Button*/}
             {product.countInStock !== 0 && (
-              <div>
+              <div className="addtocart">
                 <AddToCart
                 item={{...convertDocToObj(product), qty: 0, color: '', size: ''}}
                 />

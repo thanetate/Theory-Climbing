@@ -23,7 +23,7 @@ export default function CartDetails() {
 
       {items.length === 0 ? (
         <div className="empty-cart-message">
-          Cart is empty. <Link href="/" className="shop-link">Go shopping</Link>
+          Cart is empty. <Link href="/#products" className="shop-link">Go shopping</Link>
         </div>
       ) : (
         <div className="cart-container">
