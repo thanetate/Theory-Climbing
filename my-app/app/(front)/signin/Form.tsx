@@ -42,8 +42,8 @@ const Form = () => {
     })
   }
   return (
-    <div className="max-w-sm  mx-auto card bg-base-300 my-4">
-      <div className="card-body">
+    <div className="card-container">
+      <div className="profile-card">
         <h1 className="card-title">Sign in</h1>
         {params.get('error') && (
           <div className="alert text-error">
@@ -56,8 +56,8 @@ const Form = () => {
           <div className="alert text-success">{params.get('success')}</div>
         )}
         <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="my-2">
-            <label className="label" htmlFor="email">
+          <div className="form-group">
+            <label className="form-label" htmlFor="email">
               Email
             </label>
             <input
@@ -70,14 +70,14 @@ const Form = () => {
                   message: 'Email is invalid',
                 },
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.email?.message && (
-              <div className="text-error">{errors.email.message}</div>
+              <div className="form-error">{errors.email.message}</div>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="password">
+          <div className="">
+            <label className="form-label" htmlFor="password">
               Password
             </label>
             <input
@@ -86,17 +86,17 @@ const Form = () => {
               {...register('password', {
                 required: 'Password is required',
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.password?.message && (
-              <div className="text-error">{errors.password.message}</div>
+              <div className="form-error">{errors.password.message}</div>
             )}
           </div>
-          <div className="my-4">
+          <div className="pbtn-container">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn btn-primary w-full"
+              className="p-btn"
             >
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
@@ -105,9 +105,9 @@ const Form = () => {
             </button>
           </div>
         </form>
-        <div>
+        <div className="form-question">
           Need an account?{' '}
-          <Link className="link" href={`/register?callbackUrl=${callbackUrl}`}>
+          <Link className="fq-link" href={`/register?callbackUrl=${callbackUrl}`}>
             Register
           </Link>
         </div>

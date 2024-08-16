@@ -524,8 +524,6 @@ span {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20px;
-	gap: 15px; 
   }
   .pbtn-container {
 	display: flex;
@@ -558,6 +556,7 @@ span {
 	will-change: transform;
 	max-width: 150px;
 	max-height: auto;
+	margin-top: 20px;
 }
 
 .p-btn:disabled {
@@ -632,7 +631,13 @@ span {
 	font-size: 12px;
 	color: #e74c3c;
   }
-
+  .form-question {
+	margin-top: 20px;
+	color: white;
+  }
+  .fq-link{
+	color: white;
+  }
 /* Prouct Page */
 .product-page {
   display: flex;

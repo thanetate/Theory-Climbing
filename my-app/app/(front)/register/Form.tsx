@@ -70,12 +70,12 @@ const Form = () => {
     }
   }
   return (
-    <div className="max-w-sm  mx-auto card bg-base-300 my-4">
-      <div className="card-body">
+    <div className="card-container">
+      <div className="profile-card">
         <h1 className="card-title">Register</h1>
         <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="my-2">
-            <label className="label" htmlFor="name">
+          <div className="form-group">
+            <label className="form-label" htmlFor="name">
               Name
             </label>
             <input
@@ -84,14 +84,14 @@ const Form = () => {
               {...register('name', {
                 required: 'Name is required',
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.name?.message && (
-              <div className="text-error">{errors.name.message}</div>
+              <div className="form-error">{errors.name.message}</div>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="email">
+          <div className="form-group">
+            <label className="form-label" htmlFor="email">
               Email
             </label>
             <input
@@ -104,14 +104,14 @@ const Form = () => {
                   message: 'Email is invalid',
                 },
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.email?.message && (
-              <div className="text-error"> {errors.email.message}</div>
+              <div className="form-error"> {errors.email.message}</div>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="password">
+          <div className="form-group">
+            <label className="form-label" htmlFor="password">
               Password
             </label>
             <input
@@ -120,14 +120,14 @@ const Form = () => {
               {...register('password', {
                 required: 'Password is required',
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.password?.message && (
-              <div className="text-error">{errors.password.message}</div>
+              <div className="form-error">{errors.password.message}</div>
             )}
           </div>
-          <div className="my-2">
-            <label className="label" htmlFor="confirmPassword">
+          <div className="">
+            <label className="form-label" htmlFor="confirmPassword">
               Confirm Password
             </label>
             <input
@@ -140,17 +140,17 @@ const Form = () => {
                   return password === value || 'Passwords should match!'
                 },
               })}
-              className="input input-bordered w-full max-w-sm"
+              className="form-input"
             />
             {errors.confirmPassword?.message && (
-              <div className="text-error">{errors.confirmPassword.message}</div>
+              <div className="form-error">{errors.confirmPassword.message}</div>
             )}
           </div>
-          <div className="my-2">
+          <div className="pbtn-container">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn btn-primary w-full"
+              className="p-btn"
             >
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
@@ -161,9 +161,9 @@ const Form = () => {
         </form>
 
         <div className="divider"> </div>
-        <div>
+        <div className="form-question">
           Already have an account?{' '}
-          <Link className="link" href={`/signin?callbackUrl=${callbackUrl}`}>
+          <Link className="fq-link" href={`/signin?callbackUrl=${callbackUrl}`}>
             Login
           </Link>
         </div>
