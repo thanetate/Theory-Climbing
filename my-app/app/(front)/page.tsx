@@ -1,15 +1,17 @@
-import Header from '../../components/header/Menu';
-import Footer from '@/components/footer/footer';
-import NewsletterForm from '@/components/newsletter/Newsletter';
-import data from '@/lib/data';
-import ProductItem from '../../components/products/ProductItem';
-import { Metadata } from 'next';
-import productService from '@/lib/services/productService';
-import { convertDocToObj } from '@/lib/utils';
+import Header from "../../components/header/Menu";
+import Footer from "@/components/footer/footer";
+import NewsletterForm from "@/components/newsletter/Newsletter";
+import data from "@/lib/data";
+import ProductItem from "../../components/products/ProductItem";
+import { Metadata } from "next";
+import productService from "@/lib/services/productService";
+import { convertDocToObj } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME || 'Theory',
-  description: process.env.NEXT_PUBLIC_APP_DESC || 'Nextjs, Server components, Next auth, zustand',
+  title: process.env.NEXT_PUBLIC_APP_NAME || "Theory",
+  description:
+    process.env.NEXT_PUBLIC_APP_DESC ||
+    "Nextjs, Server components, Next auth, zustand",
 };
 
 export default function Home() {
@@ -39,7 +41,10 @@ export default function Home() {
         <div className="product-container">
           <div className="product-list">
             {data.products.map((product) => (
-              <ProductItem key={product.slug} product={convertDocToObj(product)} />
+              <ProductItem
+                key={product.slug}
+                product={convertDocToObj(product)}
+              />
             ))}
           </div>
         </div>

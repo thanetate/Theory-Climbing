@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import useCartService from '@/lib/hooks/useCartStore'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import useCartService from "@/lib/hooks/useCartStore";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function CartDetails() {
-  const router = useRouter()
-  const { items, itemsPrice, decrease, increase } = useCartService()
+  const router = useRouter();
+  const { items, itemsPrice, decrease, increase } = useCartService();
 
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return <></>
+  if (!mounted) return <></>;
 
   return (
     <>
@@ -23,7 +23,10 @@ export default function CartDetails() {
 
       {items.length === 0 ? (
         <div className="empty-cart-message">
-          Cart is empty. <Link href="/#products" className="shop-link">Go shopping</Link>
+          Cart is empty.{" "}
+          <Link href="/#products" className="shop-link">
+            Go shopping
+          </Link>
         </div>
       ) : (
         <div className="cart-container">
@@ -40,7 +43,10 @@ export default function CartDetails() {
                 {items.map((item) => (
                   <tr key={item.slug}>
                     <td>
-                      <Link href={`/product/${item.slug}`} className="item-link">
+                      <Link
+                        href={`/product/${item.slug}`}
+                        className="item-link"
+                      >
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -86,7 +92,7 @@ export default function CartDetails() {
                   </li>
                   <li className="summary-item">
                     <button
-                      onClick={() => router.push('/shipping')}
+                      onClick={() => router.push("/shipping")}
                       className="checkout-btn"
                     >
                       Proceed to Checkout
@@ -99,5 +105,5 @@ export default function CartDetails() {
         </div>
       )}
     </>
-  )
+  );
 }

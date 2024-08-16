@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import { Order } from '@/lib/models/OrderModel'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import useSWR from 'swr'
+import { Order } from "@/lib/models/OrderModel";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 export default function MyOrders() {
-  const router = useRouter()
-  const { data: orders, error } = useSWR(`/api/orders/mine`)
+  const router = useRouter();
+  const { data: orders, error } = useSWR(`/api/orders/mine`);
 
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return <></>
+  if (!mounted) return <></>;
 
-  if (error) return 'An error has occurred.'
-  if (!orders) return 'Loading...'
+  if (error) return "An error has occurred.";
+  if (!orders) return "Loading...";
 
   return (
     <div className="overflow-x-auto">
@@ -42,12 +42,12 @@ export default function MyOrders() {
               <td>
                 {order.isPaid && order.paidAt
                   ? `${order.paidAt.substring(0, 10)}`
-                  : 'not paid'}
+                  : "not paid"}
               </td>
               <td>
                 {order.isDelivered && order.deliveredAt
                   ? `${order.deliveredAt.substring(0, 10)}`
-                  : 'not delivered'}
+                  : "not delivered"}
               </td>
               <td>
                 <Link href={`/order/${order._id}`} passHref>
@@ -59,5 +59,5 @@ export default function MyOrders() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }

@@ -1,24 +1,24 @@
-'use client'
-import { useSession } from 'next-auth/react'
-import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import toast from 'react-hot-toast'
+"use client";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 type Inputs = {
-  name: string
-  email: string
-  password: string
-  confirmPassword: string
-}
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
 
 const Form = () => {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
-  const params = useSearchParams()
-  const router = useRouter()
-  let callbackUrl = params.get('callbackUrl') || '/'
+  const params = useSearchParams();
+  const router = useRouter();
+  let callbackUrl = params.get("callbackUrl") || "/";
   const {
     register,
     handleSubmit,
@@ -26,49 +26,49 @@ const Form = () => {
     formState: { errors, isSubmitting },
   } = useForm<Inputs>({
     defaultValues: {
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     },
-  })
+  });
   useEffect(() => {
     if (session && session.user) {
-      router.push(callbackUrl)
+      router.push(callbackUrl);
     }
-  }, [callbackUrl, params, router, session])
+  }, [callbackUrl, params, router, session]);
 
   const formSubmit: SubmitHandler<Inputs> = async (form) => {
-    const { name, email, password } = form
+    const { name, email, password } = form;
 
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name,
           email,
           password,
         }),
-      })
+      });
       if (res.ok) {
         return router.push(
           `/signin?callbackUrl=${callbackUrl}&success=Account has been created`
-        )
+        );
       } else {
-        const data = await res.json()
-        throw new Error(data.message)
+        const data = await res.json();
+        throw new Error(data.message);
       }
     } catch (err: any) {
       const error =
-        err.message && err.message.indexOf('E11000') === 0
-          ? 'Email is duplicate'
-          : err.message
-      toast.error(error || 'error')
+        err.message && err.message.indexOf("E11000") === 0
+          ? "Email is duplicate"
+          : err.message;
+      toast.error(error || "error");
     }
-  }
+  };
   return (
     <div className="card-container">
       <div className="profile-card">
@@ -81,8 +81,8 @@ const Form = () => {
             <input
               type="text"
               id="name"
-              {...register('name', {
-                required: 'Name is required',
+              {...register("name", {
+                required: "Name is required",
               })}
               className="form-input"
             />
@@ -97,11 +97,11 @@ const Form = () => {
             <input
               type="text"
               id="email"
-              {...register('email', {
-                required: 'Email is required',
+              {...register("email", {
+                required: "Email is required",
                 pattern: {
                   value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: 'Email is invalid',
+                  message: "Email is invalid",
                 },
               })}
               className="form-input"
@@ -117,8 +117,8 @@ const Form = () => {
             <input
               type="password"
               id="password"
-              {...register('password', {
-                required: 'Password is required',
+              {...register("password", {
+                required: "Password is required",
               })}
               className="form-input"
             />
@@ -133,11 +133,11 @@ const Form = () => {
             <input
               type="password"
               id="confirmPassword"
-              {...register('confirmPassword', {
-                required: 'Confirm Password is required',
+              {...register("confirmPassword", {
+                required: "Confirm Password is required",
                 validate: (value) => {
-                  const { password } = getValues()
-                  return password === value || 'Passwords should match!'
+                  const { password } = getValues();
+                  return password === value || "Passwords should match!";
                 },
               })}
               className="form-input"
@@ -147,11 +147,7 @@ const Form = () => {
             )}
           </div>
           <div className="pbtn-container">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="p-btn"
-            >
+            <button type="submit" disabled={isSubmitting} className="p-btn">
               {isSubmitting && (
                 <span className="loading loading-spinner"></span>
               )}
@@ -162,14 +158,14 @@ const Form = () => {
 
         <div className="divider"> </div>
         <div className="form-question">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <Link className="fq-link" href={`/signin?callbackUrl=${callbackUrl}`}>
             Login
           </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

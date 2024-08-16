@@ -1,8 +1,8 @@
-'use client'
-import useLayoutService from '@/lib/hooks/useLayout'
+"use client";
+import useLayoutService from "@/lib/hooks/useLayout";
 
 const DrawerButton = () => {
-  const { drawerOpen, toggleDrawer } = useLayoutService()
+  const { drawerOpen, toggleDrawer } = useLayoutService();
 
   return (
     <input
@@ -12,7 +12,7 @@ const DrawerButton = () => {
       checked={drawerOpen}
       onChange={toggleDrawer}
     />
-  )
-}
+  );
+};
 
-export default DrawerButton
+export default DrawerButton;
