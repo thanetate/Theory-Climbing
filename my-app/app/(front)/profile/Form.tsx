@@ -79,81 +79,83 @@ const Form = () => {
     }
   }
   return (
-    <div className="max-w-sm  mx-auto card bg-base-300 my-4">
-      <div className="card-body">
+    <div className="card-container">
+    <div className="profile-card">
+      <div className="card-header">
         <h1 className="card-title">Profile</h1>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="my-2">
-            <label className="label" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register('name', {
-                required: 'Name is required',
-              })}
-              className="input input-bordered w-full max-w-sm"
-            />
-            {errors.name?.message && (
-              <div className="text-error">{errors.name.message}</div>
-            )}
-          </div>
-          <div className="my-2">
-            <label className="label" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="text"
-              id="email"
-              {...register('email', {
-                required: 'Email is required',
-                pattern: {
-                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                  message: 'Email is invalid',
-                },
-              })}
-              className="input input-bordered w-full max-w-sm"
-            />
-            {errors.email?.message && (
-              <div className="text-error">{errors.email.message}</div>
-            )}
-          </div>
-          <div className="my-2">
-            <label className="label" htmlFor="password">
-              New Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              {...register('password', {})}
-              className="input input-bordered w-full max-w-sm"
-            />
-            {errors.password?.message && (
-              <div className="text-error">{errors.password.message}</div>
-            )}
-          </div>
-          <div className="my-2">
-            <label className="label" htmlFor="confirmPassword">
-              Confirm New Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
-              {...register('confirmPassword', {
-                validate: (value) => {
-                  const { password } = getValues()
-                  return password === value || 'Passwords should match!'
-                },
-              })}
-              className="input input-bordered w-full max-w-sm"
-            />
-            {errors.confirmPassword?.message && (
-              <div className="text-error">{errors.confirmPassword.message}</div>
-            )}
-          </div>
-
-          <div className="my-2">
+      </div>
+      <form onSubmit={handleSubmit(formSubmit)}>
+        <div className="form-group">
+          <label className="form-label" htmlFor="name">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            {...register('name', {
+              required: 'Name is required',
+            })}
+            className="form-input"
+          />
+          {errors.name?.message && (
+            <div className="form-error">{errors.name.message}</div>
+          )}
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="email">
+            Email
+          </label>
+          <input
+            type="text"
+            id="email"
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                message: 'Email is invalid',
+              },
+            })}
+            className="form-input"
+          />
+          {errors.email?.message && (
+            <div className="form-error">{errors.email.message}</div>
+          )}
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="password">
+            New Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            {...register('password', {})}
+            className="form-input"
+          />
+          {errors.password?.message && (
+            <div className="form-error">{errors.password.message}</div>
+          )}
+        </div>
+        <div className="form-group">
+          <label className="form-label" htmlFor="confirmPassword">
+            Confirm New Password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            {...register('confirmPassword', {
+              validate: (value) => {
+                const { password } = getValues()
+                return password === value || 'Passwords should match!'
+              },
+            })}
+            className="form-input"
+          />
+          {errors.confirmPassword?.message && (
+            <div className="form-error">{errors.confirmPassword.message}</div>
+          )}
+        </div>
+          <div className="center-container">
+          <div className="pbtn-container">
             <button
               type="submit"
               disabled={isSubmitting}
@@ -165,6 +167,7 @@ const Form = () => {
               Update
             </button>
           </div>
+          <div className="pbtn-container">
           <button
                   className="p-btn"
                   type="button"
@@ -172,6 +175,8 @@ const Form = () => {
                 >
                   Sign Out
                 </button>
+          </div>
+          </div>
         </form>
       </div>
     </div>
