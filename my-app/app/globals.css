@@ -940,3 +940,158 @@ span {
     transform: rotate(360deg);
   }
 }
+
+/* Cart Page */
+.page-title {
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+.empty-cart-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+/* Start HERE  */
+.shop-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.shop-link:hover {
+  text-decoration: none;
+}
+
+/* Cart container */
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Cart items table */
+.cart-items {
+  overflow-x: auto;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #f8f9fa;
+}
+
+.item-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.item-image {
+  border-radius: 4px;
+}
+
+.item-name {
+  margin-left: 10px;
+}
+
+/* Quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantity-btn:hover {
+  background-color: #0056b3;
+}
+
+.quantity-text {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+/* Item price */
+.item-price {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Cart summary */
+.cart-summary {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.summary-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+}
