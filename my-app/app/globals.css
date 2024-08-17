@@ -1346,3 +1346,14 @@ span {
 .s-total {
   margin-top: 15px;
 }
+
+/*Order Page*/
+.cartp-q {
+  padding-right: 10px;
+}
+.i-q {
+  padding-left: 25px;
+}
+.order-title {
+  font-size: x-large;
+}
