@@ -23,39 +23,37 @@ const Form = () => {
   }, [paymentMethod, router, shippingAddress.address]);
 
   return (
-    <div>
+    <div className="f-container">
       <CheckoutSteps current={2} />
-      <div className="max-w-sm mx-auto card bg-base-300 my-4">
-        <div className="card-body">
-          <h1 className="card-title">Payment Method</h1>
+      <div className="payment">
+        <div className="fform-card">
+          <h1 className="sform-title">Payment Method</h1>
           <form onSubmit={handleSubmit}>
             {["PayPal", "Stripe", "CashOnDelivery"].map((payment) => (
-              <div key={payment}>
-                <label className="label cursor-pointer">
-                  <span className="label-text">{payment}</span>
+              <div className="p1" key={payment}>
+                <label className="p1-label">
                   <input
                     type="radio"
                     name="paymentMethod"
-                    className="radio"
+                    className=""
                     value={payment}
                     checked={selectedPaymentMethod === payment}
                     onChange={() => setSelectedPaymentMethod(payment)}
                   />
+                  <span className="p1">{payment}</span>
                 </label>
               </div>
             ))}
-            <div className="my-2">
-              <button type="submit" className="btn btn-primary w-full">
-                Next
-              </button>
-            </div>
-            <div className="my-2">
+            <div className="pbutton-container">
               <button
                 type="button"
-                className="btn w-full my-2"
+                className="p-btn"
                 onClick={() => router.back()}
               >
                 Back
+              </button>
+              <button type="submit" className="p-btn">
+                Next
               </button>
             </div>
           </form>
