@@ -361,10 +361,17 @@ header ul li:hover {
 .links a:hover {
   color: #303035;
 }
+.copyright-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+}
 .copyright {
   color: white;
   font-size: 0.8rem;
-  margin: 20px 0px;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   text-align: center;
