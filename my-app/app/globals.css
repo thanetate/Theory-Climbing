@@ -1183,8 +1183,6 @@ span {
     transform: rotate(360deg);
   }
 }
-
-/* Base styles for the steps component */
 .steps {
   list-style-type: none;
   padding: 0;
@@ -1194,13 +1192,9 @@ span {
   align-items: center;
   counter-reset: step;
 }
-
-/* Horizontal layout */
 .steps-horizontal {
   flex-direction: row;
 }
-
-/* Individual step */
 .step {
   position: relative;
   flex: 1;
@@ -1209,8 +1203,6 @@ span {
   font-weight: bold;
   color: #999;
 }
-
-/* Step circle */
 .step::before {
   content: counter(step);
   counter-increment: step;
@@ -1225,37 +1217,29 @@ span {
   background-color: white;
   transition: background-color 0.3s, border-color 0.3s;
 }
-
-/* Connecting line between steps */
 .step:not(:last-child)::after {
   content: "";
   position: absolute;
-  width: calc(100% - 60px);
+  width: calc(100% - 30px);
   height: 2px;
   background-color: #ddd;
-  top: 15px;
+  top: 25px;
   left: calc(50% + 15px);
   z-index: -1;
 }
-
-/* Active step */
 .step-primary {
   color: #007bff;
 }
-
 .step-primary::before {
   border-color: #007bff;
   background-color: #007bff;
   color: white;
 }
-
 .step-primary ~ .step::before {
   border-color: #007bff;
   background-color: white;
   color: #007bff;
 }
-
-/* Completed steps */
 .step-primary ~ .step::after {
   background-color: #007bff;
 }
