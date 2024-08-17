@@ -1235,11 +1235,11 @@ span {
   background-color: #007bff;
   color: white;
 }
-.step-primary ~ .step::before {
+.step-completed::before {
   border-color: #007bff;
-  background-color: white;
-  color: #007bff;
+  background-color: #007bff;
+  color: white;
 }
-.step-primary ~ .step::after {
+.step-completed::after {
   background-color: #007bff;
 }
