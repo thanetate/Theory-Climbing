@@ -69,127 +69,126 @@ const Form = () => {
   return (
     <div>
       <CheckoutSteps current={4} />
-
-      <div className="grid md:grid-cols-4 md:gap-5 my-4">
-        <div className="overflow-x-auto md:col-span-3">
-          <div className="card bg-base-300">
-            <div className="card-body">
-              <h2 className="card-title">Shipping Address</h2>
-              <p>{shippingAddress.fullName}</p>
-              <p>
-                {shippingAddress.address}, {shippingAddress.city},{" "}
-                {shippingAddress.postalCode}, {shippingAddress.country}{" "}
-              </p>
-              <div>
-                <Link className="btn" href="/shipping">
-                  Edit
-                </Link>
+      <div className="page-container">
+        <div className="place-order-container">
+          <div className="">
+            <div className="">
+              <div className="pcard-body">
+                <h2 className="p-title">Shipping Address</h2>
+                <p className="p">{shippingAddress.fullName}</p>
+                <p className="p">
+                  {shippingAddress.address}, {shippingAddress.city},{" "}
+                  {shippingAddress.postalCode}, {shippingAddress.country}{" "}
+                </p>
+                <div>
+                  <Link className="p-btn" href="/shipping">
+                    Edit
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="card bg-base-300 mt-4">
-            <div className="card-body">
-              <h2 className="card-title">Payment Method</h2>
-              <p>{paymentMethod}</p>
-              <div>
-                <Link className="btn" href="/payment">
-                  Edit
-                </Link>
+            <div className="payment-method-container">
+              <div className="pmcard-body">
+                <h2 className="pm-title">Payment Method</h2>
+                <p className="p">{paymentMethod}</p>
+                <div>
+                  <Link className="p-btn" href="/payment">
+                    Edit
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="card bg-base-300 mt-4">
-            <div className="card-body">
-              <h2 className="card-title">Items</h2>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {items.map((item) => (
-                    <tr key={item.slug}>
-                      <td>
-                        <Link
-                          href={`/product/${item.slug}`}
-                          className="flex items-center"
-                        >
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            width={50}
-                            height={50}
-                          ></Image>
-                          <span className="px-2">
-                            {item.name}({item.color} {item.size})
-                          </span>
-                        </Link>
-                      </td>
-                      <td>
-                        <span>{item.qty}</span>
-                      </td>
-                      <td>${item.price}</td>
+            <div className="cartp-container">
+              <div className="cart-body">
+                <h2 className="cart-title">Items</h2>
+                <table className="cart-table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div>
-                <Link className="btn" href="/cart">
-                  Edit
-                </Link>
+                  </thead>
+                  <tbody className="items-con">
+                    {items.map((item) => (
+                      <tr key={item.slug}>
+                        <td className="items-con2">
+                          <Link
+                            href={`/product/${item.slug}`}
+                            className="flex items-center"
+                          >
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              width={50}
+                              height={50}
+                            ></Image>
+                            <span className="product-desc">
+                              {item.name}({item.color} {item.size})
+                            </span>
+                          </Link>
+                        </td>
+                        <td>
+                          <span className="ipq">{item.qty}</span>
+                        </td>
+                        <td className="ipp">${item.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div>
+                  <Link className="p-btn" href="/cart">
+                    Edit
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <div className="card bg-base-300">
-            <div className="card-body">
-              <h2 className="card-title">Order Summary</h2>
-              <ul className="space-y-3">
-                <li>
-                  <div className=" flex justify-between">
-                    <div>Items</div>
-                    <div>${itemsPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className=" flex justify-between">
-                    <div>Tax</div>
-                    <div>${taxPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className=" flex justify-between">
-                    <div>Shipping</div>
-                    <div>${shippingPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className=" flex justify-between">
-                    <div>Total</div>
-                    <div>${totalPrice}</div>
-                  </div>
-                </li>
+          <div>
+            <div className="summary-container">
+              <div className="summary-body">
+                <h2 className="s-title">Order Summary</h2>
+                <ul className="s-list">
+                  <li>
+                    <div className="s-items">
+                      <div>Items:</div>
+                      <div>${itemsPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="s-tax">
+                      <div>Tax:</div>
+                      <div>${taxPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="s-shipping">
+                      <div>Shipping:</div>
+                      <div>${shippingPrice}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="s-total">
+                      <div>Total:</div>
+                      <div>${totalPrice}</div>
+                    </div>
+                  </li>
 
-                <li>
-                  <button
-                    onClick={() => placeOrder()}
-                    disabled={isPlacing}
-                    className="btn btn-primary w-full"
-                  >
-                    {isPlacing && (
-                      <span className="loading loading-spinner"></span>
-                    )}
-                    Place Order
-                  </button>
-                </li>
-              </ul>
+                  <li>
+                    <button
+                      onClick={() => placeOrder()}
+                      disabled={isPlacing}
+                      className="p-btn"
+                    >
+                      {isPlacing && <span className="p-btn"></span>}
+                      Place Order
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
