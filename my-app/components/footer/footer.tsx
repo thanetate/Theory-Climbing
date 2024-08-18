@@ -3,50 +3,51 @@ export default function Footer() {
   return (
     <div className="footer-content">
       <div className="footer-main">
-        <h2>Website created by Thane Tate</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          officiis expedita doloremque dolorem saepe doloribus iure explicabo
-          deserunt at, velit ut? Vel ratione inventore, soluta facilis explicabo
-          maxime enim odio! Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. Aliquid perferendis, numquam fugit voluptatum consectetur illo
-          sed rem amet, labore cumque consequatur iure laborum odio error
-          perspiciatis saepe et, nesciunt cupiditate?
-        </p>
+        <div className="footer-top">
+          <h2>Website created by Thane Tate</h2>
+          <p>
+            This website was created by Thane Tate, a beginning Software
+            Developer and student studying Computer Science at the Universtiy of
+            North Texas. If you have any questions or concerns, please feel free
+            to reach out to me at my email linked below in the Support link or
+            DM us on Instagram.
+          </p>
+        </div>
         {/*Maybe make these links better*/}
+
         <div className="social-links">
-          <a href="#">
+          <a href="https://www.instagram.com/theory_climbing/">
             <img src="./icons/instagram.png" alt="" />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/thane-tate-940302227/">
             <img src="./icons/linkedin.png" alt="" />
           </a>
-          <a href="#">
+          <a href="https://github.com/thanetate">
             <img src="./icons/github.png" alt="" />
           </a>
         </div>
       </div>
       <div className="links">
         <p>Information</p>
-        <a href="" className="link">
+        <a href="https://www.instagram.com/theory_climbing/" className="link">
           Our Company
         </a>
-        <a href="" className="link">
+        <a href="https://www.instagram.com/theory_climbing/" className="link">
           About Us
         </a>
-        <a href="" className="link">
+        <a href="https://www.instagram.com/theory_climbing/" className="link">
           Blog
         </a>
       </div>
       <div className="links">
         <p>Helpful Links</p>
-        <a href="" className="link">
+        <a href="mailto:thaneallantate@gmail.com" className="link">
           Services
         </a>
-        <a href="" className="link">
+        <a href="mailto:thaneallantate@gmail.com" className="link">
           Support
         </a>
-        <a href="" className="link">
+        <a href="mailto:thaneallantate@gmail.com" className="link">
           Terms &amp; Conditions
         </a>
       </div>

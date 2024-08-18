@@ -313,11 +313,19 @@ header ul li:hover {
   color: white;
   font-size: 1.6rem;
 }
-.footer-main p {
+.footer-top {
   color: white;
   font-size: 0.8rem;
   line-height: 1.3rem;
 }
+@media (min-width: 768px) {
+  .footer-top {
+    max-width: 400px;
+    padding-left: 0;
+    padding-right: auto;
+  }
+}
+
 .social-links {
   margin: 15px 0px;
   display: flex;
