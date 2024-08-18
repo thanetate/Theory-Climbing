@@ -16,16 +16,13 @@ export default function Footer() {
         {/*Maybe make these links better*/}
         <div className="social-links">
           <a href="#">
-            <img src="./Images/new-profile.png" alt="" />
+            <img src="./icons/instagram.png" alt="" />
           </a>
           <a href="#">
-            <img src="./Images/new-profile.png" alt="" />
+            <img src="./icons/linkedin.png" alt="" />
           </a>
           <a href="#">
-            <img src="./Images/new-profile.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="./Images/new-profile.png" alt="" />
+            <img src="./icons/github.png" alt="" />
           </a>
         </div>
       </div>

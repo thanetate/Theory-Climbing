@@ -329,6 +329,7 @@ header ul li:hover {
   border-radius: 5px;
   transition: 0.5s;
   text-decoration: none;
+  padding-bottom: 2px;
 }
 .social-links a:hover {
   opacity: 0.7;
@@ -337,6 +338,11 @@ header ul li:hover {
   margin: 2px;
   font-size: 1.1rem;
   color: #1e1e1e;
+}
+.social-links img {
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 .links {
   display: flex;
