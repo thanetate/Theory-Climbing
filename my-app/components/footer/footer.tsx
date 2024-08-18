@@ -13,6 +13,7 @@ export default function Footer() {
             DM us on Instagram.
           </p>
         </div>
+        <p className="extra"> </p>
         {/*Maybe make these links better*/}
 
         <div className="social-links">
