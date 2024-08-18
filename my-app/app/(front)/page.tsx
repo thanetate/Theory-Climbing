@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <section className="announcments">
         <div className="news">
-          <p>FREE U.S. SHIPPING ABOVE $100</p>
+          <p>PRODUCTS COMING SOON</p>
         </div>
       </section>
 
