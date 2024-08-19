@@ -6,11 +6,11 @@ export default function Footer() {
         <div className="footer-top">
           <h2>Website created by Thane Tate</h2>
           <p>
-            This website was created by Thane Tate, a beginning Software
-            Developer and student studying Computer Science at the Universtiy of
-            North Texas. If you have any questions or concerns, please feel free
-            to reach out to me at my email linked below in the Support link or
-            DM us on Instagram.
+            This website was created by Thane Tate, a student studying Computer
+            Science at the Universtiy of North Texas and a devoted climber. If
+            you have any questions or concerns, please feel free to reach out to
+            me at my email linked below in the Support link or DM us on
+            Instagram.
           </p>
         </div>
         <p className="extra"> </p>

@@ -6,6 +6,12 @@ import ProductItem from "../../components/products/ProductItem";
 import { Metadata } from "next";
 import productService from "@/lib/services/productService";
 import { convertDocToObj } from "@/lib/utils";
+import { Montserrat } from "next/font/google";
+
+const bungee = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_APP_NAME || "Theory",
@@ -16,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main className={bungee.className}>
       <section className="announcments">
         <div className="news">
           <p>PRODUCTS COMING SOON</p>
@@ -30,10 +36,11 @@ export default function Home() {
       <section className="message" id="products">
         <h3>theory</h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, amet
-          necessitatibus. Natus eos aspernatur earum dolorum suscipit dolorem,
-          exercitationem excepturi temporibus assumenda? Nisi delectus
-          repudiandae sapiente aspernatur. Deleniti, iste nesciunt.
+          Theory Climbing merges premium quality with modern style for the
+          discerning climber. Our collection is crafted from high grade
+          materials, ensuring every piece is as durable as it is comfortable.
+          Designed with a keen eye for detail, our clothing not only performs on
+          the rock but also looks great wherever your adventures take you.
         </p>
       </section>
 
@@ -52,6 +59,6 @@ export default function Home() {
 
       <NewsletterForm />
       <Footer />
-    </>
+    </main>
   );
 }

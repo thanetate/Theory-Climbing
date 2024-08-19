@@ -33,17 +33,11 @@ export default function Header() {
           <li>
             {session && session.user ? (
               <div>
-		
-				<div>
-				<button
-					className="h-btn"
-					type="button"
-					onClick={goToProfile}
-				>
-					Profile
-				</button>
-				</div>
-				
+                <div>
+                  <button className="h-btn" type="button" onClick={goToProfile}>
+                    Profile
+                  </button>
+                </div>
               </div>
             ) : (
               <button className="h-btn" type="button" onClick={() => signIn()}>
