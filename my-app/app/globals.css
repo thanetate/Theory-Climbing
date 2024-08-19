@@ -569,7 +569,56 @@ span {
 .pbtn-container {
   display: flex;
   justify-content: center;
-  width: 100%; /* Optional: Ensures buttons are fully aligned if varying widths */
+  width: 100%;
+}
+.pbtn-container2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 600;
+}
+.p-btn2 {
+  padding-top: 15px;
+  font-size: small;
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 50px;
+  min-width: 0;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+  max-width: 150px;
+  max-height: auto;
+  margin-top: 20px;
+}
+
+.p-btn2:disabled {
+  pointer-events: none;
+}
+
+.p-btn2:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.p-btn2:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .p-btn {

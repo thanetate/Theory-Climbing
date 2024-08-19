@@ -164,8 +164,8 @@ const Form = () => {
                 Update
               </button>
             </div>
-            <div className="pbtn-container">
-              <Link className="p-btn" href="/order-history">
+            <div className="pbtn-container2">
+              <Link className="p-btn2" href="/order-history">
                 Order History
               </Link>
             </div>
