@@ -1,4 +1,6 @@
 //Footer Component
+import Image from "next/image"; // Import Image component
+
 export default function Footer() {
   return (
     <div className="footer-content">
@@ -18,13 +20,28 @@ export default function Footer() {
 
         <div className="social-links">
           <a href="https://www.instagram.com/theory_climbing/">
-            <img src="./icons/instagram.png" alt="" />
+            <Image
+              src="/icons/instagram.png"
+              alt="Instagram"
+              width={32} // Adjust based on your image dimensions
+              height={32} // Adjust based on your image dimensions
+            />
           </a>
           <a href="https://www.linkedin.com/in/thane-tate-940302227/">
-            <img src="./icons/linkedin.png" alt="" />
+            <Image
+              src="/icons/linkedin.png"
+              alt="LinkedIn"
+              width={32} // Adjust based on your image dimensions
+              height={32} // Adjust based on your image dimensions
+            />
           </a>
           <a href="https://github.com/thanetate">
-            <img src="./icons/github.png" alt="" />
+            <Image
+              src="/icons/github.png"
+              alt="GitHub"
+              width={32} // Adjust based on your image dimensions
+              height={32} // Adjust based on your image dimensions
+            />
           </a>
         </div>
       </div>

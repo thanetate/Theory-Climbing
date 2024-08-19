@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import productService from "@/lib/services/productService";
 import { convertDocToObj } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
+import Image from "next/image"; // Import Image component
 
 const bungee = Montserrat({
   subsets: ["latin"],
@@ -30,7 +31,13 @@ export default function Home() {
       </section>
 
       <section className="picture-container">
-        <img src="./Images/main.jpeg" alt="main picture" />
+        <Image
+          src="/Images/main.jpeg"
+          alt="main picture"
+          layout="responsive" // Add layout for responsiveness
+          width={1200} // Adjust based on your image dimensions
+          height={800} // Adjust based on your image dimensions
+        />
       </section>
 
       <section className="message" id="products">
