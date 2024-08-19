@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 type Inputs = {
   name: string;
   email: string;
@@ -162,6 +163,11 @@ const Form = () => {
                 )}
                 Update
               </button>
+            </div>
+            <div className="pbtn-container">
+              <Link className="p-btn" href="/order-history">
+                Order History
+              </Link>
             </div>
             <div className="pbtn-container">
               <button className="p-btn" type="button" onClick={signOutHandler}>

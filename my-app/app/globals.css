@@ -1356,8 +1356,6 @@ span {
   padding: 0;
 }
 .items-con {
-  border-color: blue;
-  border-style: double;
   padding: 0;
 }
 .items-con .product-desc {
@@ -1397,4 +1395,9 @@ span {
 }
 .order-title {
   font-size: x-large;
+}
+.item-det {
+  position: relative;
+  top: -20px;
+  padding: 5px;
 }
