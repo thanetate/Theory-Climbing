@@ -18,10 +18,10 @@ export default function ProductItem({ product }: { product: Product }) {
       </figure>
       <div className="product-desc">
         <Link href={`/product/${product.slug}`}>
-          <h2 className="product-name">Coming Soon</h2>
+          <h2 className="product-name">{product.name}</h2>
         </Link>
         <p className="product-brand">{product.brand}</p>
-        <div className="product-price">$1</div>
+        <div className="product-price">{product.price}</div>
       </div>
     </div>
   );

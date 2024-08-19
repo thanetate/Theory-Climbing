@@ -1,11 +1,11 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 export type User = {
-  _id: string
-  name: string
-  email: string
-  isAdmin: boolean
-}
+  _id: string;
+  name: string;
+  email: string;
+  isAdmin: boolean;
+};
 
 const UserSchema = new mongoose.Schema(
   {
@@ -25,8 +25,8 @@ const UserSchema = new mongoose.Schema(
     isAdmin: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
-)
+);
 
-const UserModel = mongoose.models?.User || mongoose.model('User', UserSchema)
+const UserModel = mongoose.models.User || mongoose.model("User", UserSchema);
 
-export default UserModel
+export default UserModel;

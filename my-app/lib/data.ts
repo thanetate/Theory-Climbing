@@ -1,50 +1,50 @@
-import bcrypt from 'bcryptjs'
+import bcrypt from "bcryptjs";
 
 const data = {
   users: [
     {
-      name: 'John',
-      email: 'admin@example.com',
-      password: bcrypt.hashSync('123456'),
+      name: "Thane Tate",
+      email: "thanetate1@gmail.com",
+      password: bcrypt.hashSync("Pooh5791"),
       isAdmin: true,
     },
     {
-      name: 'Jane',
-      email: 'user@example.com',
-      password: bcrypt.hashSync('123456'),
+      name: "Bailee Gasche",
+      email: "bailee.gasche@icloud.com",
+      password: bcrypt.hashSync("Family5791"),
       isAdmin: false,
     },
   ],
   products: [
     {
-        name: 'Product 1',
-        slug: 'product-1',
-        category: 'Shirts',
-        image: '/images/fashion-1.jpeg',
-        price: 120,
-        brand: 'Nike',
-        rating: 4.5,
-        numReviews: 10,
-        countInStock: 6,
-        description: 'High quality product',
-        isFeatured: true,
-        banner: '', //image
+      name: "COMING SOON",
+      slug: "product-1",
+      category: "Shirts",
+      image: "/images/fashion-1.jpeg",
+      price: 1,
+      brand: "theory",
+      rating: 5,
+      numReviews: 0,
+      countInStock: 100,
+      description: "Product Coming Soon...",
+      isFeatured: true,
+      banner: "", //image
     },
     {
-        name: 'Product 2',
-        slug: 'product-2',
-        category: 'Shirts',
-        image: '/images/fashion-2.jpeg',
-        price: 130,
-        brand: 'Addidas',
-        rating: 2.5,
-        numReviews: 8,
-        countInStock: 6,
-        description: 'High quality product',
-        isFeatured: true,
-        banner: '', //image
+      name: "COMING SOON",
+      slug: "product-2",
+      category: "Shirts",
+      image: "/images/fashion-2.jpeg",
+      price: 1,
+      brand: "theory",
+      rating: 5,
+      numReviews: 0,
+      countInStock: 100,
+      description: "Product Coming Soon...",
+      isFeatured: true,
+      banner: "", //image
     },
-],
-}
+  ],
+};
 
-export default data
+export default data;
