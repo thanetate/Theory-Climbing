@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <NewsletterForm />
+      {/*<NewsletterForm />*/}
       <Footer />
     </main>
   );

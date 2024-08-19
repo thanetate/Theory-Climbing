@@ -11,6 +11,7 @@ export default function Header() {
   const { items, init } = useCartService();
   const [mounted, setMounted] = useState(false);
   const { data: session, status } = useSession();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -23,6 +24,10 @@ export default function Header() {
   const signOutHandler = () => {
     signOut({ callbackUrl: "/signin" });
     init();
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -64,11 +69,15 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div id="hamburger-icon">
+      <div
+        id="hamburger-icon"
+        className={menuOpen ? "open" : ""}
+        onClick={toggleMenu}
+      >
         <div className="bar1" />
         <div className="bar2" />
         <div className="bar3" />
-        <ul className="mobile-menu">
+        <ul className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           {session && session.user ? (
             <li>
               <a href="/profile">Profile</a>
@@ -79,10 +88,10 @@ export default function Header() {
             </li>
           )}
           <li>
-            <a href="#products">Products</a>
+            <a href="/#products">Products</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="/#about">About</a>
           </li>
           <li>
             <a href="/cart">Cart</a>
