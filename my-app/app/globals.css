@@ -502,6 +502,7 @@ span {
 #register {
   left: 450px;
 }
+
 /* Phone */
 @media only screen and (max-width: 600px) {
   header nav {
