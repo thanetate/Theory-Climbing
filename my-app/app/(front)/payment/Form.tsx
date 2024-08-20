@@ -39,21 +39,23 @@ const Form = () => {
         <div className="fform-card">
           <h1 className="sform-title">Payment Method</h1>
           <form onSubmit={handleSubmit}>
-            {["PayPal", "Stripe", "CashOnDelivery"].map((payment) => (
-              <div className="p1" key={payment}>
-                <label className="p1-label">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    className=""
-                    value={payment}
-                    checked={selectedPaymentMethod === payment}
-                    onChange={() => setSelectedPaymentMethod(payment)}
-                  />
-                  <span className="p1">{payment}</span>
-                </label>
-              </div>
-            ))}
+            {["PayPal", "Venmo: @thane-tate", "CashOnDelivery"].map(
+              (payment) => (
+                <div className="p1" key={payment}>
+                  <label className="p1-label">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      className=""
+                      value={payment}
+                      checked={selectedPaymentMethod === payment}
+                      onChange={() => setSelectedPaymentMethod(payment)}
+                    />
+                    <span className="p1">{payment}</span>
+                  </label>
+                </div>
+              )
+            )}
             <div className="pbutton-container">
               <button
                 type="button"
