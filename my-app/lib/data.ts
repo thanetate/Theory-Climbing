@@ -34,7 +34,7 @@ const data = {
       name: "COMING SOON",
       slug: "product-2",
       category: "Shirts",
-      image: "/Images/fashion-2.jpeg",
+      image: "/Images/coming-soon.jpg",
       price: 1,
       brand: "theory",
       rating: 5,
