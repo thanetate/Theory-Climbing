@@ -549,9 +549,6 @@ span {
     width: 90%;
     padding-bottom: 20px;
   }
-  .footer-content {
-    margin-top: 200px;
-  }
 }
 
 @media only screen and (min-width: 1200px) {

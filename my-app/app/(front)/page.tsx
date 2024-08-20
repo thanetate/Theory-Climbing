@@ -34,9 +34,9 @@ export default function Home() {
         <Image
           src="/Images/main.jpeg"
           alt="main picture"
-          layout="responsive" // Add layout for responsiveness
-          width={1200} // Adjust based on your image dimensions
-          height={800} // Adjust based on your image dimensions
+          layout="responsive"
+          width={1200}
+          height={800}
         />
       </section>
 
