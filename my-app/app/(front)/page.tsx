@@ -1,3 +1,5 @@
+//server side rendering
+//imports from hooks and components
 import Header from "../../components/header/Menu";
 import Footer from "@/components/footer/footer";
 import NewsletterForm from "@/components/newsletter/Newsletter";

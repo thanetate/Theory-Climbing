@@ -1,4 +1,6 @@
+//client side rendering
 "use client";
+//imports from hooks and components
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -6,6 +8,7 @@ import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
+//type for form inputs
 type Inputs = {
   name: string;
   email: string;
@@ -13,11 +16,13 @@ type Inputs = {
   confirmPassword: string;
 };
 
+//for handling the profile form
 const Form = () => {
+  //accessing the session and router
   const { data: session } = useSession();
-
   const params = useSearchParams();
   const router = useRouter();
+  //for setting the form values
   let callbackUrl = params.get("callbackUrl") || "/";
   const {
     register,
@@ -32,16 +37,19 @@ const Form = () => {
       confirmPassword: "",
     },
   });
+  //redirects to the callbackUrl if the user is already logged in
   useEffect(() => {
     if (session && session.user) {
       router.push(callbackUrl);
     }
   }, [callbackUrl, params, router, session]);
 
+  //handling the form submission
   const formSubmit: SubmitHandler<Inputs> = async (form) => {
     const { name, email, password } = form;
 
     try {
+      //calls the api to register the user
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: {
@@ -54,6 +62,7 @@ const Form = () => {
         }),
       });
       if (res.ok) {
+        //redirects to the callbackUrl with a success message
         return router.push(
           `/signin?callbackUrl=${callbackUrl}&success=Account has been created`
         );

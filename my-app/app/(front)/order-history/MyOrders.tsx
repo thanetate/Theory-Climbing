@@ -1,22 +1,29 @@
+//client side rendering
 "use client";
 
+//imports from hooks and components
 import { Order } from "@/lib/models/OrderModel";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
+//for displaying the order history
 export default function MyOrders() {
+  //router for navigation
   const router = useRouter();
+  //fetching the orders using API endpoints
   const { data: orders, error } = useSWR(`/api/orders/mine`);
 
+  //for checking if the component is mounted
   const [mounted, setMounted] = useState(false);
+  //for setting the component to mounted after the initial rendering
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  //error handling
   if (!mounted) return <></>;
-
   if (error) return "An error has occurred.";
   if (!orders) return "Loading...";
 

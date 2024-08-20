@@ -1,4 +1,6 @@
+//client side rendering
 "use client";
+//imports from hooks and components
 import CheckoutSteps from "@/components/CheckoutSteps";
 import useCartService from "@/lib/hooks/useCartStore";
 import { useRouter } from "next/navigation";
@@ -8,8 +10,11 @@ import toast from "react-hot-toast";
 import useSWRMutation from "swr/mutation";
 import Image from "next/image";
 
+//for displaying the payment form
 const Form = () => {
+  //accessing the router for navigation
   const router = useRouter();
+  //destructor
   const {
     paymentMethod,
     shippingAddress,
@@ -21,6 +26,7 @@ const Form = () => {
     clear,
   } = useCartService();
 
+  //for placing the order
   const { trigger: placeOrder, isMutating: isPlacing } = useSWRMutation(
     `/api/orders/mine`,
     async (url) => {
@@ -39,6 +45,7 @@ const Form = () => {
           totalPrice,
         }),
       });
+      //parsing json response
       const data = await res.json();
       if (res.ok) {
         clear();
@@ -49,6 +56,7 @@ const Form = () => {
       }
     }
   );
+  // useEffect hook to ensure a payment method is selected and there are items in the cart
   useEffect(() => {
     if (!paymentMethod) {
       return router.push("/payment");
@@ -59,11 +67,13 @@ const Form = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paymentMethod, router]);
 
+  //for setting the component to mounted after the initial rendering
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  //used to handle sever side rendering issues
   if (!mounted) return <></>;
 
   return (

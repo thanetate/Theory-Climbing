@@ -1,4 +1,6 @@
+//client side not server side
 "use client";
+//imports from hooks and components
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { OrderItem } from "@/lib/models/OrderModel";
 import { useSession } from "next-auth/react";
@@ -8,6 +10,7 @@ import toast from "react-hot-toast";
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 
+//for displaying the order details
 export default function OrderDetails({
   orderId,
   paypalClientId,
@@ -15,9 +18,11 @@ export default function OrderDetails({
   orderId: string;
   paypalClientId: string;
 }) {
+  //this hook is used to handle the order delivery process
   const { trigger: deliverOrder, isMutating: isDelivering } = useSWRMutation(
-    `/api/orders/${orderId}`,
+    `/api/orders/${orderId}`, //api endpoint
     async (url) => {
+      //calls the api and marks it as delivered
       const res = await fetch(`/api/admin/orders/${orderId}/deliver`, {
         method: "PUT",
         headers: {
@@ -25,14 +30,18 @@ export default function OrderDetails({
         },
       });
       const data = await res.json();
+      //error handling
       res.ok
         ? toast.success("Order delivered successfully")
         : toast.error(data.message);
     }
   );
 
+  //fetch user role (session info) using NextAuth
   const { data: session } = useSession();
   console.log(session);
+
+  //create a PayPal order
   function createPayPalOrder() {
     return fetch(`/api/orders/${orderId}/create-paypal-order`, {
       method: "POST",
@@ -44,6 +53,7 @@ export default function OrderDetails({
       .then((order) => order.id);
   }
 
+  //approve the PayPal order
   function onApprovePayPalOrder(data: any) {
     return fetch(`/api/orders/${orderId}/capture-paypal-order`, {
       method: "POST",
@@ -58,11 +68,14 @@ export default function OrderDetails({
       });
   }
 
+  //fetch order details from the API
   const { data, error } = useSWR(`/api/orders/${orderId}`);
 
+  //error handling
   if (error) return error.message;
   if (!data) return "Loading...";
 
+  //destructure the data
   const {
     paymentMethod,
     shippingAddress,

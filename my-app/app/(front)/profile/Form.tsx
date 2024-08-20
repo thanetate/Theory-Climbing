@@ -1,4 +1,6 @@
+//client side rendering
 "use client";
+//imports from hooks and components
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -13,11 +15,13 @@ type Inputs = {
   confirmPassword: string;
 };
 
+//for handling the profile form
 const signOutHandler = () => {
   signOut({ callbackUrl: "/" });
 };
-
+//for displaying the profile form
 const Form = () => {
+  //accessing the session and router
   const { data: session, update } = useSession();
   const router = useRouter();
 
@@ -35,6 +39,7 @@ const Form = () => {
     },
   });
 
+  //for setting the form values
   useEffect(() => {
     if (session && session.user) {
       setValue("name", session.user.name!);
@@ -42,6 +47,7 @@ const Form = () => {
     }
   }, [router, session, setValue]);
 
+  //handling the form submission
   const formSubmit: SubmitHandler<Inputs> = async (form) => {
     const { name, email, password } = form;
     try {

@@ -1,4 +1,6 @@
+//client side rendering
 "use client";
+//imports from hooks and components
 import CheckoutSteps from "@/components/CheckoutSteps";
 import useCartService from "@/lib/hooks/useCartStore";
 import { ShippingAddress } from "@/lib/models/OrderModel";
@@ -6,8 +8,11 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { SubmitHandler, ValidationRule, useForm } from "react-hook-form";
 
+//for displaying the shipping form
 const Form = () => {
+  //accessing the router for navigation
   const router = useRouter();
+  //accessing the saveShippingAddress and shippingAddress from the useCartService
   const { saveShippingAddrress, shippingAddress } = useCartService();
   const {
     register,
@@ -24,6 +29,7 @@ const Form = () => {
     },
   });
 
+  //populate the form with the shipping address
   useEffect(() => {
     setValue("fullName", shippingAddress.fullName);
     setValue("address", shippingAddress.address);
@@ -32,11 +38,13 @@ const Form = () => {
     setValue("country", shippingAddress.country);
   }, [setValue, shippingAddress]);
 
+  //handling the form submission
   const formSubmit: SubmitHandler<ShippingAddress> = async (form) => {
     saveShippingAddrress(form);
     router.push("/payment");
   };
 
+  //reusabel form input component
   const FormInput = ({
     id,
     name,

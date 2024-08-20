@@ -1,3 +1,4 @@
+//imports from hooks and components
 import data from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
@@ -5,11 +6,13 @@ import AddToCart from "@/components/products/AddToCart";
 import productService from "@/lib/services/productService";
 import { convertDocToObj } from "@/lib/utils";
 
+//for generating metadata
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }) {
+  //fetching the product using the slug
   const product = await productService.getBySlug(params.slug);
   if (!product) {
     return { title: "Product Not Found" };
@@ -20,11 +23,13 @@ export async function generateMetadata({
   };
 }
 
+//for displaying the product details
 export default async function ProductDetails({
   params,
 }: {
   params: { slug: string };
 }) {
+  //fetching the product using the slug
   const product = await productService.getBySlug(params.slug);
   if (!product) {
     return { title: "Product Not Found" };

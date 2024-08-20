@@ -1,20 +1,29 @@
+//excecuted on the client side rather than server side
 "use client";
 
+//imports from hooks and components
 import useCartService from "@/lib/hooks/useCartStore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+//for displaying the cart details
 export default function CartDetails() {
+  //accessing the router for navigation
   const router = useRouter();
+  //accessing the items, itemsPrice, decrease and increase from the useCartService
   const { items, itemsPrice, decrease, increase } = useCartService();
 
+  //for checking if the component is mounted
   const [mounted, setMounted] = useState(false);
+
+  //for setting the component to mounted after the initial rendering
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  //used to handle sever side rendering issues
   if (!mounted) return <></>;
 
   return (

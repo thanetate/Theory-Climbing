@@ -1,18 +1,23 @@
+//client side rendering
 "use client";
+//imports from hooks and components
 import { signIn, useSession } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
 
+//type for form inputs
 type Inputs = {
   email: string;
   password: string;
 };
-
+//for handling the sign in form
 const Form = () => {
+  //accessing the session
   const { data: session } = useSession();
 
+  //accessing the router and search params
   const params = useSearchParams();
   let callbackUrl = params.get("callbackUrl") || "/";
   const router = useRouter();
@@ -27,13 +32,13 @@ const Form = () => {
       password: "",
     },
   });
-
+  //redirects to the callbackUrl if the user is already logged in
   useEffect(() => {
     if (session && session.user) {
       router.push(callbackUrl);
     }
   }, [callbackUrl, params, router, session]);
-
+  //handling the form submission
   const formSubmit: SubmitHandler<Inputs> = async (form) => {
     const { email, password } = form;
     signIn("credentials", {
