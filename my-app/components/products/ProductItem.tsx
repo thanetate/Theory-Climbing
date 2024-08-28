@@ -21,7 +21,7 @@ export default function ProductItem({ product }: { product: Product }) {
           <h2 className="product-name">{product.name}</h2>
         </Link>
         <p className="product-brand">{product.brand}</p>
-        <div className="product-price">${product.price}</div>
+        {/*<div className="product-price">${product.price}</div>*/}
       </div>
     </div>
   );

@@ -80,8 +80,6 @@ header ul li:hover {
   transition: 0.3s;
 }
 .h-btn {
-  border-color: red;
-  border-style: double;
   all: unset;
   gap: 10px;
   display: flex;
@@ -136,7 +134,14 @@ header ul li:hover {
   width: 100%;
   height: auto;
   padding: 0;
-  margin: 0;
+  margin: auto;
+  max-width: 1000px;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+}
+.main2 img {
+  display: none;
 }
 /* Message Section */
 .message h3 {
@@ -181,7 +186,7 @@ header ul li:hover {
   width: 325px;
   height: 400px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .product-desc {
@@ -354,7 +359,7 @@ header ul li:hover {
 .social-links a {
   padding: 5px;
   background-color: #dbd8e3;
-  border-radius: 5px;
+  border-radius: 4px;
   transition: 0.5s;
   text-decoration: none;
   padding-bottom: 2px;
@@ -556,6 +561,8 @@ span {
     padding-right: -15px;
   }
 }
+@media only screen and (min-width: 1000px) {
+}
 /*Profile Page*/
 .center-container {
   display: flex;
@@ -706,7 +713,7 @@ span {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 4px;
   box-sizing: border-box;
   background-color: black;
 }
@@ -797,7 +804,7 @@ span {
   background-color: #0070f3;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -817,7 +824,7 @@ span {
   background-color: #0070f3;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
   font-size: 16px;
@@ -841,7 +848,7 @@ span {
   font-size: 16px;
   color: white;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: center;
   min-width: 40px;
   background-color: #0070f3;
@@ -1107,7 +1114,7 @@ span {
   font-size: 16px;
   color: white;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: center;
   min-width: 40px;
   background-color: #0070f3;
@@ -1446,4 +1453,62 @@ span {
   position: relative;
   top: -20px;
   padding: 5px;
+}
+/*Order-History Page*/
+/* Container styling */
+.order-history-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* Title styling */
+.order-history-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.order-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.order-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Details link styling */
+.details-link {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-link:hover {
+  text-decoration: underline;
 }

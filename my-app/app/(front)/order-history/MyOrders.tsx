@@ -28,8 +28,9 @@ export default function MyOrders() {
   if (!orders) return "Loading...";
 
   return (
-    <div className="overflow-x-auto">
-      <table className="table">
+    <div className="order-history-container">
+      <h1 className="order-history-title">My Order History</h1>
+      <table className="order-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -58,7 +59,7 @@ export default function MyOrders() {
               </td>
               <td>
                 <Link href={`/order/${order._id}`} passHref>
-                  Details
+                  <p className="details-link">Details</p>
                 </Link>
               </td>
             </tr>
