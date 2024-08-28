@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function Header() {
   const router = useRouter();
@@ -32,7 +33,13 @@ export default function Header() {
 
   return (
     <header>
-      <div id="brand">theory</div>
+      <Image
+        id="brand"
+        src="/icons/logo2.png"
+        alt="logo"
+        width={100}
+        height={50}
+      />
       <nav>
         <ul>
           <li>
