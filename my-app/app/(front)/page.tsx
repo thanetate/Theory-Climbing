@@ -42,7 +42,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="message" id="products">
+      <section className="message" id="about">
         <h3>theory</h3>
         <p>
           Theory Climbing merges premium quality with modern style for the
@@ -53,7 +53,7 @@ export default function Home() {
         </p>
       </section>
 
-      <div className="product-section">
+      <div className="product-section" id="products">
         <div className="product-container">
           <div className="product-list">
             {data.products.map((product) => (
