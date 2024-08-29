@@ -23,24 +23,24 @@ export default function Footer() {
             <Image
               src="/icons/instagram.png"
               alt="Instagram"
-              width={32} // Adjust based on your image dimensions
-              height={32} // Adjust based on your image dimensions
+              width={32}
+              height={32}
             />
           </a>
           <a href="https://www.linkedin.com/in/thane-tate-940302227/">
             <Image
               src="/icons/linkedin.png"
               alt="LinkedIn"
-              width={32} // Adjust based on your image dimensions
-              height={32} // Adjust based on your image dimensions
+              width={32}
+              height={32}
             />
           </a>
           <a href="https://github.com/thanetate">
             <Image
               src="/icons/github.png"
               alt="GitHub"
-              width={32} // Adjust based on your image dimensions
-              height={32} // Adjust based on your image dimensions
+              width={32}
+              height={32}
             />
           </a>
         </div>

@@ -16,6 +16,51 @@ html {
   scroll-behavior: smooth;
 }
 
+/* TEMP */
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/*Gallery Carousel*/
+.list {
+  margin-left: -40px;
+  display: flex;
+  gap: 8px;
+
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.item {
+  flex-shrink: 0;
+  background-color: #fff;
+  scroll-snap-align: center;
+}
+.content {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 900px;
+  min-width: 300px;
+  min-height: 200px;
+  overflow: hidden;
+}
+.content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 600px; /* Adjust for smaller screens */
+  }
+}
 /* Announcments Section */
 .announcments {
   position: absolute;
@@ -560,8 +605,6 @@ span {
   .newsletter {
     padding-right: -15px;
   }
-}
-@media only screen and (min-width: 1000px) {
 }
 /*Profile Page*/
 .center-container {

@@ -32,15 +32,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="picture-container">
-        <Image
-          src="/Images/main.jpeg"
-          alt="main picture"
-          layout="responsive"
-          width={1200}
-          height={800}
-        />
-      </section>
+      <ul className="list">
+        <li className="item">
+          <div className="content">
+            <Image
+              src="/Images/main.jpeg"
+              alt="main picture"
+              layout="responsive"
+              width={1200}
+              height={800}
+            />
+          </div>
+        </li>
+        <li className="item">
+          <div className="content">
+            <Image
+              src="/Images/main2.jpeg"
+              layout="responsive"
+              alt="main picture"
+              width={1200}
+              height={800}
+            />
+          </div>
+        </li>
+      </ul>
 
       <section className="message" id="about">
         <h3>theory</h3>
@@ -53,6 +68,18 @@ export default function Home() {
         </p>
       </section>
 
+      <section>
+        <div className="product-section" id="products">
+          <div className="product-container">
+            <div className="product-list">
+              <div className="product-card">
+                <h1>Products Coming Soon</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*}
       <div className="product-section" id="products">
         <div className="product-container">
           <div className="product-list">
@@ -65,7 +92,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+    */}
       {/*<NewsletterForm />*/}
       <Footer />
     </main>
