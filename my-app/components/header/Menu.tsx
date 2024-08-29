@@ -33,6 +33,11 @@ export default function Header() {
 
   return (
     <header>
+      <section className="announcments">
+        <div className="news">
+          <p>PRODUCTS COMING SOON</p>
+        </div>
+      </section>
       <Image
         id="brand"
         src="/icons/logo2.png"

@@ -26,12 +26,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className={bungee.className}>
-      <section className="announcments">
-        <div className="news">
-          <p>PRODUCTS COMING SOON</p>
-        </div>
-      </section>
-
       <ul className="list">
         <li className="item">
           <div className="content">
