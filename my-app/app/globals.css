@@ -26,10 +26,10 @@ html {
 
 /*Gallery Carousel*/
 .list {
+  margin-top: 0;
   margin-left: -40px;
   display: flex;
   gap: 8px;
-
   list-style: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -79,7 +79,6 @@ html {
   align-items: center;
   font-size: 12px;
   line-height: 16px;
-  font-family: Nunito Sans;
   padding-top: 7px;
   color: #ffffff;
   flex: none;
@@ -101,7 +100,7 @@ header {
   font-family: Nunito Sans;
 }
 #brand {
-  padding-top: 20px;
+  padding-top: 15px;
   font-weight: bold;
   font-size: 18px;
   display: flex;

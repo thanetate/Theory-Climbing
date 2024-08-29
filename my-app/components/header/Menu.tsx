@@ -6,6 +6,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import { Montserrat } from "next/font/google";
+
+const bungee = Montserrat({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function Header() {
   const router = useRouter();
@@ -32,7 +38,7 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header className={bungee.className}>
       <section className="announcments">
         <div className="news">
           <p>PRODUCTS COMING SOON</p>
