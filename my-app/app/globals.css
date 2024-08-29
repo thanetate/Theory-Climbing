@@ -117,7 +117,6 @@ header ul a {
   color: black;
 }
 header ul li {
-  margin-top: 15px;
   padding: 5px;
   margin-left: 10px;
 }
@@ -141,7 +140,7 @@ header ul li:hover {
   margin: auto 0;
   display: none;
   cursor: pointer;
-  padding-top: 30px;
+  padding-top: 25px;
 }
 #hamburger-icon div {
   width: 25px;
