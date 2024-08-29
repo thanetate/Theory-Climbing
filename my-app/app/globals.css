@@ -117,6 +117,7 @@ header ul a {
   color: black;
 }
 header ul li {
+  margin-top: 15px;
   padding: 5px;
   margin-left: 10px;
 }
