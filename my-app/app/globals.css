@@ -45,8 +45,8 @@ html {
   width: 100%;
   max-width: 1000px;
   max-height: 900px;
-  min-width: 300px;
-  min-height: 200px;
+  min-width: 500px;
+  min-height: 450px;
   overflow: hidden;
 }
 .content img {
