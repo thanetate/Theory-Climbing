@@ -27,8 +27,8 @@ export default function CartDetails() {
   if (!mounted) return <></>;
 
   return (
-    <>
-      <h1 className="page-title">Shopping Cart</h1>
+    <div className="cart-">
+      <h1 className="page-title">cart</h1>
 
       {items.length === 0 ? (
         <div className="empty-cart-message">
@@ -43,9 +43,9 @@ export default function CartDetails() {
             <table className="cart-table">
               <thead>
                 <tr>
-                  <th>Item</th>
+                  <th>Product</th>
                   <th>Quantity</th>
-                  <th>Price</th>
+                  <th>Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,6 +113,6 @@ export default function CartDetails() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

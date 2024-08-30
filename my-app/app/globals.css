@@ -1092,11 +1092,15 @@ span {
 }
 
 /* Cart Page */
+.cart- {
+  background-color: #1e1e1e;
+  height: 100vh;
+}
 .page-title {
   padding: 20px;
   text-align: center;
-  font-size: 2rem;
-  color: #333;
+  font-size: xx-large;
+  color: white;
 }
 .empty-cart-message {
   text-align: center;
@@ -1114,7 +1118,6 @@ span {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
@@ -1124,33 +1127,58 @@ span {
 .cart-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-style: double;
+  border-color: #1e1e1e;
+  color: white;
 }
-
 .cart-table th,
 .cart-table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  background-color: #1e1e1e;
+  color: white;
 }
-.cart-table th {
-  background-color: #f8f9fa;
+@media only screen and (max-width: 600px) {
+  .cart-table th {
+    display: none;
+  }
+  .item-name {
+    position: absolute;
+    margin-bottom: 100px;
+    font-size: small;
+  }
+  .item-price {
+    font-size: small;
+    position: absolute;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 160px;
+  }
+  .item-image {
+    margin-bottom: 50px;
+  }
+  .quantity-controls {
+    position: absolute;
+    left: 0;
+    margin-top: 100px;
+    margin-left: 25px;
+  }
 }
 .item-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
 }
 .item-name {
   position: relative;
   margin-left: 10px;
   top: 0;
+  color: white;
+  font: bold;
 }
 .item-image {
+  height: 80px;
+  width: auto;
   border-radius: 4px;
 }
 .quantity-controls td {
@@ -1186,12 +1214,14 @@ span {
   background-color: #0056b3;
 }
 .item-price {
-  font-size: 1rem;
+  font-size: small;
   color: #333;
 }
 .cart-summary {
+  margin-top: 30px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 .summary-card {
   background-color: #ffffff;
