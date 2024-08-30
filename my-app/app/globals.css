@@ -777,72 +777,51 @@ span {
 }
 /* Prouct Page */
 .product-page {
+  background-color: #1e1e1e;
+}
+
+.product-img-container {
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-}
-
-.product-page img {
-  width: 50vh;
+  width: 100vw;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
 }
-
-.product-page ul {
-  list-style: none;
-  padding: 0;
-  width: 390px;
-  height: auto;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
 .product-page h1.name {
-  font-size: 2rem;
+  font-size: larger;
   margin-bottom: 10px;
-  color: #333;
-  text-align: center;
+  color: #f8f8f8;
 }
-
 .product-page .description {
-  font-size: 1.1rem;
+  font-size: medium;
   margin-bottom: 15px;
   color: #555;
-  text-align: center;
 }
-
 .product-page .price {
-  font-size: 1.5rem;
+  font-size: medium;
   font-weight: bold;
-  color: #222;
+  color: #f8f8f8;
   margin-bottom: 20px;
-  text-align: center;
 }
-
 .product-page .status {
-  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
   margin-bottom: 20px;
+  margin-top: 30px;
   color: #555;
-  text-align: center;
 }
-
 .product-page a {
   color: #0070f3;
   text-decoration: none;
-  margin-bottom: 20px;
   display: inline-block;
+  margin-bottom: 30px;
 }
-
 .product-page a:hover {
   text-decoration: underline;
 }
-
 .product-page button {
   background-color: #0070f3;
   color: #fff;
@@ -858,11 +837,11 @@ span {
 }
 
 .product-page .backtoproduct {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
+  padding-left: 5px;
 }
 
-/* Style for the container holding the buttons and quantity */
 .product-page button {
   background-color: #0070f3;
   color: #fff;
@@ -883,6 +862,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #1e1e1e;
 }
 .product-page .prospan {
   top: 0px;
@@ -900,15 +880,42 @@ span {
   display: inline-block;
 }
 
-@media (min-width: 768px) {
-  .product-page {
-    flex-direction: row;
-    justify-content: space-between;
+.product-page ul {
+  list-style-type: none;
+  height: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  background-color: #1e1e1e;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+@media only screen and (min-width: 1200px) {
+  .product-p {
+    background-color: #1e1e1e;
   }
-
+  .product-page {
+    background-color: #1e1e1e;
+  }
+  .product-img-container {
+    background-color: #1e1e1e;
+    width: 50vw;
+    height: 100vh;
+    padding-bottom: 20px;
+  }
+  .product-img-container img {
+    background-color: #1e1e1e;
+    width: 100px;
+    height: auto;
+  }
   .product-page ul {
-    margin-left: 20px;
-    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 100px;
+    width: 50vw;
+    height: 100%;
   }
 }
 

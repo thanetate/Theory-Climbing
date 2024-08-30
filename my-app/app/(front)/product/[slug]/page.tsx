@@ -37,8 +37,9 @@ export default async function ProductDetails({
   return (
     <>
       <div className="product-page">
-        <div className="product-img">
+        <div className="product-img-container">
           <Image
+            className="product-img"
             src={product.image}
             alt={product.name}
             width={640}
@@ -50,15 +51,15 @@ export default async function ProductDetails({
         <div>
           <ul>
             <li>
+              <div className="price">Price: ${product.price}</div>
+            </li>
+            <li>
               <h1 className="name">{product.name}</h1>
             </li>
             <li>
               <div className="description">
                 Description: {product.description}
               </div>
-            </li>
-            <li>
-              <div className="price">Price: ${product.price}</div>
             </li>
             <li>
               <div className="status">
@@ -80,10 +81,10 @@ export default async function ProductDetails({
                 </div>
               )}
             </div>
+            <div className="backtoproduct">
+              <Link href="/">Back to products</Link>
+            </div>
           </ul>
-          <div className="backtoproduct">
-            <Link href="/">Back to products</Link>
-          </div>
         </div>
       </div>
     </>
