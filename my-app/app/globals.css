@@ -173,6 +173,7 @@ header ul li:hover {
   left: -47px;
   height: calc(100vh - 50px);
   width: 100%;
+  z-index: 100;
 }
 /* Lead Picture */
 .picture-container img {
