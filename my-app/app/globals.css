@@ -1467,64 +1467,84 @@ span {
 .ipq {
   display: none;
 }
-
 .page-container {
-  margin: 30px;
+  padding: 20px; /* Reduced padding for smaller screens */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-color: red;
+  border-style: double;
 }
+
 .place-order-container {
-  padding: 5px;
+  padding: 10px; /* Reduced padding for mobile */
   background-color: #1e1e1e;
   border-radius: 10px;
   color: white;
-  padding-left: 15px;
-  width: 500px;
+  width: 90%; /* Use a percentage for responsive width */
+  max-width: 500px; /* Optional max-width for larger screens */
   height: auto;
   padding-bottom: 30px;
 }
+
 .p-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Adjusted for mobile readability */
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
 }
+
 .p {
-  font-size: small;
+  font-size: 0.9rem; /* Smaller font size for readability */
   font-weight: normal;
 }
-.pcard-body .p-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pmcard-body .p-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cartp-container {
-  margin-right: 10px;
-  padding: 0;
-}
-.items-con {
-  padding: 0;
-}
-.items-con .product-desc {
-  padding-left: 0;
-}
 
+.pcard-body .p-btn,
+.pmcard-body .p-btn,
 .cartp-container .p-btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.cartp-container {
+  margin-right: 10px;
+  padding: 0;
+}
+
+.items-con {
+  padding: 0;
+}
+
+.items-con .product-desc {
+  padding-left: 0;
+}
+
 .s-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 10px; /* Reduced padding for smaller devices */
+  }
+
+  .place-order-container {
+    padding: 10px; /* Consistent padding */
+    width: 95%; /* More flexible width for very small screens */
+  }
+
+  .p-title {
+    font-size: 1rem; /* Slightly smaller font size for titles on mobile */
+  }
+
+  .p {
+    font-size: 0.8rem; /* Smaller font size for paragraphs on mobile */
+  }
+}
+
 .s-items,
 .s-tax,
 .s-shipping {
