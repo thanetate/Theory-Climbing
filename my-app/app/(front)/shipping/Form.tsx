@@ -76,27 +76,29 @@ const Form = () => {
   );
 
   return (
-    <div className="scontainer">
+    <>
       <CheckoutSteps current={1} />
-      <div className="sform-card">
-        <h1 className="sform-title">Shipping Address</h1>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <FormInput name="Full Name" id="fullName" required />
-          <FormInput name="Address" id="address" required />
-          <FormInput name="City" id="city" required />
-          <FormInput name="Postal Code" id="postalCode" required />
-          <FormInput name="Country" id="country" required />
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="sform-button"
-          >
-            {isSubmitting && <span className="spinner"></span>}
-            Next
-          </button>
-        </form>
+      <div className="scontainer">
+        <div className="sform-card">
+          <h1 className="sform-title">Shipping Address</h1>
+          <form onSubmit={handleSubmit(formSubmit)}>
+            <FormInput name="Full Name" id="fullName" required />
+            <FormInput name="Address" id="address" required />
+            <FormInput name="City" id="city" required />
+            <FormInput name="Postal Code" id="postalCode" required />
+            <FormInput name="Country" id="country" required />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="sform-button"
+            >
+              {isSubmitting && <span className="spinner"></span>}
+              Next
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
