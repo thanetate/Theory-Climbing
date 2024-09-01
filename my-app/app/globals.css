@@ -1456,6 +1456,7 @@ span {
   position: relative;
   top: -70px;
   margin-bottom: -100px;
+  margin-right: -100px;
 }
 .ipp {
   padding: 0;
@@ -1468,37 +1469,31 @@ span {
   display: none;
 }
 .page-container {
-  padding: 20px; /* Reduced padding for smaller screens */
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: red;
-  border-style: double;
 }
-
 .place-order-container {
-  padding: 10px; /* Reduced padding for mobile */
+  padding: 10px;
   background-color: #1e1e1e;
   border-radius: 10px;
   color: white;
-  width: 90%; /* Use a percentage for responsive width */
-  max-width: 500px; /* Optional max-width for larger screens */
+  width: 90%;
+  max-width: 500px;
   height: auto;
   padding-bottom: 30px;
 }
-
 .p-title {
-  font-size: 1.2rem; /* Adjusted for mobile readability */
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
 }
-
 .p {
-  font-size: 0.9rem; /* Smaller font size for readability */
+  font-size: 0.9rem;
   font-weight: normal;
 }
-
 .pcard-body .p-btn,
 .pmcard-body .p-btn,
 .cartp-container .p-btn {
@@ -1528,20 +1523,23 @@ span {
 
 @media (max-width: 600px) {
   .page-container {
-    padding: 10px; /* Reduced padding for smaller devices */
+    padding: 10px;
   }
 
   .place-order-container {
-    padding: 10px; /* Consistent padding */
-    width: 95%; /* More flexible width for very small screens */
+    padding: 10px;
+    width: 95%;
   }
 
   .p-title {
-    font-size: 1rem; /* Slightly smaller font size for titles on mobile */
+    font-size: 1rem;
   }
 
   .p {
-    font-size: 0.8rem; /* Smaller font size for paragraphs on mobile */
+    font-size: 0.8rem;
+  }
+  .ipp {
+    display: none;
   }
 }
 
