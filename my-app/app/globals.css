@@ -1449,6 +1449,23 @@ span {
 }
 
 /*Place Order Page*/
+.items-con .product-desc {
+  padding: 0;
+  position: relative;
+  top: -70px;
+  margin-bottom: -100px;
+}
+.ipp {
+  padding: 0;
+  font-size: small;
+  position: relative;
+  top: 10px;
+  left: -150px;
+}
+.ipq {
+  display: none;
+}
+
 .page-container {
   display: flex;
   justify-content: center;
@@ -1494,12 +1511,7 @@ span {
 .items-con .product-desc {
   padding-left: 0;
 }
-.ipq {
-  display: none;
-}
-.ipp {
-  display: none;
-}
+
 .cartp-container .p-btn {
   display: flex;
   align-items: center;

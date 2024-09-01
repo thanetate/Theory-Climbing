@@ -114,20 +114,13 @@ const Form = () => {
               <div className="cart-body">
                 <h2 className="cart-title">Items</h2>
                 <table className="cart-table">
-                  <thead>
-                    <tr>
-                      <th>Item</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
                   <tbody className="items-con">
                     {items.map((item) => (
                       <tr key={item.slug}>
                         <td className="items-con2">
                           <Link
                             href={`/product/${item.slug}`}
-                            className="flex items-center"
+                            className="item-title-link"
                           >
                             <Image
                               src={item.image}
