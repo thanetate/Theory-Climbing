@@ -62,7 +62,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/*
       <section>
         <div className="product-section" id="products">
           <div className="product-container">
@@ -74,8 +73,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      */}
 
+      {/*
       <div className="product-section" id="products">
         <div className="product-container">
           <div className="product-list">
@@ -88,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+   */}
       {/*<NewsletterForm />*/}
       <Footer />
     </main>
