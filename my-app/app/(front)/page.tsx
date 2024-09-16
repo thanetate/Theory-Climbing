@@ -16,13 +16,6 @@ const bungee = Montserrat({
   weight: ["400"],
 });
 
-export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME || "Theory",
-  description:
-    process.env.NEXT_PUBLIC_APP_DESC ||
-    "Nextjs, Server components, Next auth, zustand",
-};
-
 export default function Home() {
   return (
     <main className={bungee.className}>
