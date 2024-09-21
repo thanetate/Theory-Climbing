@@ -78,10 +78,7 @@ const Form = () => {
         toast.error(data.message || "error");
       }
     } catch (err: any) {
-      const error =
-        err.response && err.response.data && err.response.data.message
-          ? err.response.data.message
-          : err.message;
+      const error = err.response && err.response.data && err.response.data.message ? err.response.data.message : err.message;
       toast.error(error);
     }
   };
