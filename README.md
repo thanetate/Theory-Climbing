@@ -1,4 +1,4 @@
-# Theory Climbing - A Clothing Shop for Climbers
+# Theory Climbing
 
 Check it out here: https://theory-climbing.vercel.app/
 
