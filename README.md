@@ -1,19 +1,6 @@
-# Theory Climbing - A Web Shop for Climbers
+# Theory Climbing - A Clothing Shop for Climbers
 
-Link to Website: https://theory-climbing.vercel.app/
-
-Theory Climbing is a full-stack web application built with Next.Js.
-
-* Next.Js
-* TypeScript
-* CSS
-* MongoDB, Mongoose
-* Vercel, MongoDB Atlas
-
-## Features
-* API Integration
-* Authentication Features
-* Responsive User Interface
+Check it out here: https://theory-climbing.vercel.app/
 
 ## Background
 
